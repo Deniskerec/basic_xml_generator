@@ -1,6 +1,15 @@
 var builder = require('xmlbuilder');
+
+function print() {
+  document.getElementById("testOne").onsubmit = function (){
+    var a = document.getElementById("device_type").value;
+  }
+
+	console.log(a);
+}
+print();
  
-var xml = builder.create('smartCardTransactionLog', {encoding: 'UTF-8'})
+/*var xml = builder.create('smartCardTransactionLog', {encoding: 'UTF-8'})
   .ele('deviceInformation')
     .ele('deviceType', 'officePos').up()
     .ele('deviceVersion', '19.09.17').up()
@@ -13,8 +22,8 @@ var xml = builder.create('smartCardTransactionLog', {encoding: 'UTF-8'})
     .ele('operatorTypeName', 'a').up()
     .ele('publicTransportOrganizationRef', 'Hubli').up()
   .end({ pretty: true});
- 
-console.log(xml);
+ */
+
 
  /*.ele('deviceInformation', '').up()
 .ele('deviceType', 'officePos').up()
@@ -26,3 +35,8 @@ console.log(xml);
 .ele('cardOperation', '').up()
 .ele('cardHolderInfoBasic', '').up()
 .ele('cardHolderInfoExtended', '').up()*/
+
+/*function alert() {
+  alert("connected!");
+}*/
+
