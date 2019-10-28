@@ -1,4 +1,7 @@
 var builder = require('xmlbuilder');
+const express = require('express')
+const app = express()
+const port = 3000
  
 var xml = builder.create('smartCardTransactionLog', {encoding: 'UTF-8'})
   .ele('deviceInformation')
@@ -15,6 +18,17 @@ var xml = builder.create('smartCardTransactionLog', {encoding: 'UTF-8'})
   .end({ pretty: true});
  
 console.log(xml);
+
+
+
+app.get('/', (req, res) => res.send('Hello World!'))
+app.post('createxml', function (req, res) {
+  console.log(req)
+  res.send('Got a ')
+})
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
 
  /*.ele('deviceInformation', '').up()
 .ele('deviceType', 'officePos').up()
